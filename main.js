@@ -8,7 +8,9 @@
         grabPointY,
         grabPointX,
         createNote,
-        addNoteBtnEl;
+        addNoteBtnEl,
+        init,
+        tryLocalStorage;
 
     onDragStart = function (ev) {
         var boundClientRect;
@@ -53,7 +55,27 @@
     createNote = function () {
         var stickerEl = document.createElement('div'),
             barEl = document.createElement('div'),
-            textareaEl = document.createElement('textarea');
+            textareaEl = document.createElement('textarea'),
+            saveBtnEl = document.createElement('button'),
+            deleteBtnEl = document.createElement('button'),
+            onSave,
+            onDelete,
+            loadnotes;
+
+        onDelete = function () {
+            var obj = {};
+            deleteNote(obj);
+        }
+        onSave = function () {
+            var obj = {};
+            saveNote(obj);
+        }
+
+        saveBtnEl.addEventListener('click', onSave);
+        deleteBtnEl.addEventListener('click', onDelete);
+
+        saveBtnEl.classList('saveButton');
+        deleteBtnEl.classList('deleteButton');
 
         var transformCSSValue = 'translateX('+Math.random()*400+'px)translateY('+Math.random() *400+'px)';
         stickerEl.style.transform = transformCSSValue;
@@ -61,17 +83,47 @@
         barEl.classList.add('bar');
         stickerEl.classList.add('sticker');
 
+        barEl.appendChild(saveBtnEl);
+        barEl.appendChild(deleteBtnEl);
+
         stickerEl.appendChild(barEl);
         stickerEl.appendChild(textareaEl);
         stickerEl.addEventListener('mousedown', onDragStart, false);
 
         document.body.appendChild(stickerEl);
     };
-    createNote();
+
+    testLocalStorage = function () {
+        var foo = 'foo'
+        try {
+            localStorage.setItem(foo,foo);
+            localStorage.removeItem(foo);
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
+    init = function () {
+        if(!testLocalStorage()){
+            var message = 'We are sorry but you canoon use localstorage'
+        } else {
+            saveNote = function () {
+
+            };
+            deleteNote = function () {
+                //tutaj bedzie usuwanie notatek
+            };
+            loadNotes = function () {
+                // tutaj będą notatki
+            }
+            loadNotes();
+        }
 
     addNoteBtnEl = document.querySelector('.addNoteBtn');
     addNoteBtnEl.addEventListener('click',createNote,false);
     document.addEventListener('mousemove',onDrag,false);
     document.addEventListener('mouseup', onDragEnd, false);
+};
+init()
 
 })();
