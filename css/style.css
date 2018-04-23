@@ -1,0 +1,35 @@
+body{
+    background: midnightblue;
+}
+.sticker{
+    padding-top: 20px;
+    background: white;
+    min-height: 100px;
+    min-width: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid green;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+.sticker .bar {
+    position: absolute;
+    top:0;
+    left:0;
+    height: 20px;
+    background: rgba(0, 133, 125, 0.71);
+    width: 100%;
+}
+.sticker textarea{
+    padding: 3px 20px;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+}
+.sticker .bar:hover{
+    cursor: move;
+    background: #4bd0b5;
+}
+.sticker:hover{
+    z-index: 1;
+}
