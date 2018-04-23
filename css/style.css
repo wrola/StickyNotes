@@ -1,35 +1,42 @@
-body{
-    background: midnightblue;
+body {
+    background: #696e9e;
 }
-.sticker{
+
+.sticker {
     padding-top: 20px;
-    background: white;
+    background: #ffffff;
     min-height: 100px;
     min-width: 100px;
     position: absolute;
     left: 0;
     top: 0;
-    border: 1px solid green;
+    border: 1px solid #34b399;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
+
 .sticker .bar {
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     height: 20px;
-    background: rgba(0, 133, 125, 0.71);
+    background: #9fb309;
     width: 100%;
 }
-.sticker textarea{
-    padding: 3px 20px;
+
+.sticker textarea {
+    padding: 3px 10px;
     box-sizing: border-box;
+    min-height: 100px;
+    min-width: 100px;
     background: transparent;
     border: none;
 }
-.sticker .bar:hover{
+
+.sticker .bar:hover {
     cursor: move;
-    background: #4bd0b5;
+    background: #8aff98;
 }
-.sticker:hover{
+
+.sticker:hover {
     z-index: 1;
 }
