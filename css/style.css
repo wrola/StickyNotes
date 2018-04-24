@@ -1,5 +1,6 @@
+
 body {
-    background: #696e9e;
+    background: #9bb9fc;
 }
 
 .sticker {
@@ -10,7 +11,7 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    border: 1px solid #34b399;
+    border: 1px solid #0900b3;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 
@@ -19,7 +20,7 @@ body {
     top: 0;
     left: 0;
     height: 20px;
-    background: #9fb309;
+    background: #625fb3;
     width: 100%;
 }
 
@@ -34,14 +35,24 @@ body {
 
 .sticker .bar:hover {
     cursor: move;
-    background: #8aff98;
+    background: #80a3d0;
 }
 
 .sticker:hover {
     z-index: 1;
 }
-.saveButton,
-.deleteButton{
+
+.addNoteBtn {
+    color: white;
+    font-size: 20px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.44);
+    background: #1416b3;
+    border: none;
+}
+
+.deleteButton,
+.saveButton {
     border: none;
     position: absolute;
     top: 2px;
@@ -49,12 +60,17 @@ body {
     width: 15px;
     cursor: pointer;
 }
-.deleteButton{
+
+.deleteButton {
     border-radius: 50%;
     right: 5px;
-    background: #ff0000;
+    background: #ff0d39;
 }
-.saveButton{
-    background-color: transparent;
-    background-image: url('');
-}
+
+.saveButton {
+    background-color: #67c603;
+    background-image: url('save-icon.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    left: 5px;
