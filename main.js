@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var draggedEl,
+    let draggedEl,
         onDragStart,
         onDrag,
         onDragEnd,
@@ -18,7 +18,7 @@
         testLocalStorage;
 
     onDragStart = function (ev) {
-        var boundingClientRect;
+        let boundingClientRect;
         if (ev.target.className.indexOf('bar') === -1) {
             return;
         }
@@ -36,7 +36,7 @@
             return;
         }
 
-        var posX = ev.clientX + grabPointX,
+        let posX = ev.clientX + grabPointX,
             posY = ev.clientY + grabPointY;
 
         if (posX < 0) {
@@ -57,7 +57,7 @@
     };
 
     getNoteObject = function (el) {
-        var textarea = el.querySelector('textarea');
+        let textarea = el.querySelector('textarea');
         return {
             transformCSSValue: el.style.transform,
             content: textarea.value,
@@ -74,7 +74,7 @@
     };
 
     createNote = function (options) {
-        var stickerEl = document.createElement('div'),
+        let stickerEl = document.createElement('div'),
             barEl = document.createElement('div'),
             saveBtnEl = document.createElement('button'),
             deleteBtnEl = document.createElement('button'),
@@ -133,7 +133,7 @@
     };
 
     testLocalStorage = function () {
-        var foo = 'foo';
+        let foo = 'foo';
         try {
             localStorage.setItem(foo, foo);
             localStorage.removeItem(foo);
@@ -146,7 +146,7 @@
     init = function () {
 
         if (!testLocalStorage) {
-            var message = "We are sorry but you cannot use localStorage";
+            let message = "We are sorry but you cannot use localStorage";
             saveNote = function () {
                 console.warn(message);
             };
@@ -164,8 +164,8 @@
             };
 
             loadNotes = function () {
-                for(var i = 0; i < localStorage.length; i++) {
-                    var noteObject = JSON.parse(
+                for(let i = 0; i < localStorage.length; i++) {
+                   let noteObject = JSON.parse(
                         localStorage.getItem(
                             localStorage.key(i)
                         )
